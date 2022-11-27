@@ -1,5 +1,6 @@
 package com.example.calculator.service;
 
+import com.example.calculator.dto.FindResponseDTO;
 import com.example.calculator.dto.LocationRequestDTO;
 import com.example.calculator.dto.LocationResponseDTO;
 import com.example.calculator.entity.Location;
@@ -7,6 +8,7 @@ import com.example.calculator.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -45,5 +47,21 @@ public class LocationServiceImpl implements LocationService {
         LocationResponseDTO responseDTO = new LocationResponseDTO();
         responseDTO.setResult(result);
         return responseDTO;
+    }
+
+    @Override
+    public List<FindResponseDTO> searchList() {
+        List<Location> list = locationRepository.findAll();
+        List<FindResponseDTO> result = new ArrayList<>();
+
+        for(int i = 0; i < list.size(); i++) {
+            FindResponseDTO dto = new FindResponseDTO();
+            dto.setName(list.get(i).getName());
+            dto.setX(list.get(i).getX());
+            dto.setY(list.get(i).getY());
+            result.add(dto);
+        }
+
+        return result;
     }
 }

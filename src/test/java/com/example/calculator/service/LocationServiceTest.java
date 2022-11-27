@@ -29,4 +29,9 @@ public class LocationServiceTest {
         dto.setLocation_name2("school");
         Assertions.assertEquals(2.83, locationService.distance2(dto).getResult());
     }
+
+    @Test
+    public void searchList() {
+        Assertions.assertEquals(3, locationService.searchList().size());
+    }
 }

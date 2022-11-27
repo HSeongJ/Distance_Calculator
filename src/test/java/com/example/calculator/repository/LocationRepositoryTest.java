@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
 @SpringBootTest
 public class LocationRepositoryTest {
 
@@ -27,15 +25,5 @@ public class LocationRepositoryTest {
     @Test
     public void test() {
         System.out.println(locationRepository.findAll());
-    }
-
-    @Test
-    public void test2() {
-        List<Location> list = locationRepository.findAll();
-        FindResponseDTO[] dto = new FindResponseDTO[list.size()];
-        System.out.println(dto.length);
-        for(Location a : list) {
-            System.out.println(a.getName());
-        }
     }
 }
