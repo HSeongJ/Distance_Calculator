@@ -19,4 +19,9 @@ public class LocationRepositoryTest {
         dto.setLocation_name2("cafe");
         Assertions.assertEquals("5.66", locationRepository.distance2(dto).toString());
     }
+
+    @Test
+    public void test() {
+        System.out.println(locationRepository.findAll());
+    }
 }

@@ -46,5 +46,4 @@ public class LocationServiceImpl implements LocationService {
         responseDTO.setResult(result);
         return responseDTO;
     }
-
 }
