@@ -23,4 +23,6 @@ public class LocationController {
     public LocationResponseDTO distance2(@RequestParam("requestDTO") LocationRequestDTO requestDTO) {
         return locationService.distance2(requestDTO);
     }
+
+
 }
