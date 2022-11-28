@@ -1,6 +1,7 @@
 package com.example.calculator.controller;
 
 import com.example.calculator.dto.FindResponseDTO;
+import com.example.calculator.dto.InsertRequestDTO;
 import com.example.calculator.dto.LocationRequestDTO;
 import com.example.calculator.dto.LocationResponseDTO;
 import com.example.calculator.service.LocationService;
@@ -18,12 +19,12 @@ public class LocationController {
     private LocationService locationService;
 
     @GetMapping("/distance")
-    public LocationResponseDTO distance(@RequestParam("requestDTO") LocationRequestDTO requestDTO) {
+    public LocationResponseDTO distance(LocationRequestDTO requestDTO) {
         return locationService.distance(requestDTO);
     }
 
     @GetMapping("/distance2")
-    public LocationResponseDTO distance2(@RequestParam("requestDTO") LocationRequestDTO requestDTO) {
+    public LocationResponseDTO distance2(LocationRequestDTO requestDTO) {
         return locationService.distance2(requestDTO);
     }
 
@@ -32,5 +33,8 @@ public class LocationController {
         return  locationService.searchList();
     }
 
-
+    @GetMapping("/insert")
+    public String addLocation(InsertRequestDTO requestDTO) {
+        return locationService.addLocation(requestDTO);
+    }
 }

@@ -34,4 +34,9 @@ public class LocationServiceTest {
     public void searchList() {
         Assertions.assertEquals(3, locationService.searchList().size());
     }
+
+    @Test
+    public void addLocationTest(){
+
+    }
 }

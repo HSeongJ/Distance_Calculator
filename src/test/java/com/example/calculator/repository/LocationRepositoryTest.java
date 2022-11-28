@@ -28,21 +28,4 @@ public class LocationRepositoryTest {
         System.out.println(locationRepository.findAll());
     }
 
-    @Test
-    public void addLocationTest(){
-//          locationRepository.findById(88);
-
-//        Location location = new Location();
-//        InsertRequestDTO requestDTO = new InsertRequestDTO();
-//
-//        requestDTO.setName("market");
-//        requestDTO.setX(3);
-//        requestDTO.setY(3);
-//
-//        location.setName(requestDTO.getName());
-//        location.setX(requestDTO.getX());
-//        location.setY(requestDTO.getY());
-//
-//        locationRepository.save(location);
-    }
 }
