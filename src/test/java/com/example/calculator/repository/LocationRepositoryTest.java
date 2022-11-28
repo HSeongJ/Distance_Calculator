@@ -1,6 +1,7 @@
 package com.example.calculator.repository;
 
 import com.example.calculator.dto.FindResponseDTO;
+import com.example.calculator.dto.InsertRequestDTO;
 import com.example.calculator.dto.LocationRequestDTO;
 import com.example.calculator.entity.Location;
 import org.junit.jupiter.api.Assertions;
@@ -22,8 +23,4 @@ public class LocationRepositoryTest {
         Assertions.assertEquals("5.66", locationRepository.distance2(dto).toString());
     }
 
-    @Test
-    public void test() {
-        System.out.println(locationRepository.findAll());
-    }
 }
