@@ -23,4 +23,29 @@ public class LocationRepositoryTest {
         Assertions.assertEquals("5.66", locationRepository.distance2(dto).toString());
     }
 
+<<<<<<< HEAD
+=======
+    @Test
+    public void test() {
+        System.out.println(locationRepository.findAll());
+    }
+
+    @Test
+    public void addLocationTest(){
+          locationRepository.findById(88);
+
+//        Location location = new Location();
+//        InsertRequestDTO requestDTO = new InsertRequestDTO();
+//
+//        requestDTO.setName("market");
+//        requestDTO.setX(3);
+//        requestDTO.setY(3);
+//
+//        location.setName(requestDTO.getName());
+//        location.setX(requestDTO.getX());
+//        location.setY(requestDTO.getY());
+//
+//        locationRepository.save(location);
+    }
+>>>>>>> f5de94f026ff01bf634d35ac64d97ca38ac9ee51
 }

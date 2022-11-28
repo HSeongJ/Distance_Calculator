@@ -1,6 +1,7 @@
 package com.example.calculator.service;
 
 import com.example.calculator.dto.FindResponseDTO;
+import com.example.calculator.dto.InsertRequestDTO;
 import com.example.calculator.dto.LocationRequestDTO;
 import com.example.calculator.dto.LocationResponseDTO;
 import com.example.calculator.entity.Location;
@@ -63,5 +64,21 @@ public class LocationServiceImpl implements LocationService {
         }
 
         return result;
+    }
+
+    @Override
+    public String addLocation(InsertRequestDTO requestDTO) {
+        try {
+
+            Location location = new Location();
+            location.setName(requestDTO.getName());
+            location.setX(requestDTO.getX());
+            location.setY(requestDTO.getY());
+
+            locationRepository.save(location);
+            return "데이터가 정상적으로 추가되었습니다.";
+        }catch (Exception e) {
+            return "ID가 중복 되었습니다.";
+        }
     }
 }
