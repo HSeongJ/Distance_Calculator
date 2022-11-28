@@ -22,5 +22,8 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
             "FROM Location l")
     List<Location> findAll();
 
+
+
+
 //    List<Location> findAll();
 }
