@@ -19,4 +19,9 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
             " WHERE l.name = :#{#requestDTO.location_name1} or l.name = :#{#requestDTO.location_name2}")
     Object distance2(@Param("requestDTO") LocationRequestDTO requestDTO);
 
+    @Query("SELECT l " +
+            "FROM Location l")
+    List<Location> findAll();
+
+//    List<Location> findAll();
 }
