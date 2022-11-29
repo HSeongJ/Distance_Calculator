@@ -1,5 +1,6 @@
 package com.example.calculator.repository;
 
+import com.example.calculator.dto.DeleteRequestDTO;
 import com.example.calculator.dto.FindResponseDTO;
 import com.example.calculator.dto.InsertRequestDTO;
 import com.example.calculator.dto.LocationRequestDTO;
@@ -26,6 +27,12 @@ public class LocationRepositoryTest {
     @Test
     public void test() {
         System.out.println(locationRepository.findAll());
+    }
+
+    @Test
+    public void deleteByNameTest(){
+
+        locationRepository.deleteByName("dd");
     }
 
 }

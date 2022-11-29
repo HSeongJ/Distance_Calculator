@@ -4,9 +4,11 @@ import com.example.calculator.dto.InsertRequestDTO;
 import com.example.calculator.dto.LocationRequestDTO;
 import com.example.calculator.entity.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 public interface LocationRepository extends JpaRepository<Location, Long> {
@@ -22,6 +24,9 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
     @Query("SELECT l " +
             "FROM Location l")
     List<Location> findAll();
+    @Transactional
+    @Modifying
+    void deleteByName(String name);
 
 
 
