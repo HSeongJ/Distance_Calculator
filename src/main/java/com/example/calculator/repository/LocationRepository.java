@@ -24,12 +24,10 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
     @Query("SELECT l " +
             "FROM Location l")
     List<Location> findAll();
+
     @Transactional
     @Modifying
     void deleteByName(String name);
-
-
-
 
 //    List<Location> findAll();
 }

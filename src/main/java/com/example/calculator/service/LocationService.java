@@ -1,9 +1,6 @@
 package com.example.calculator.service;
 
-import com.example.calculator.dto.FindResponseDTO;
-import com.example.calculator.dto.InsertRequestDTO;
-import com.example.calculator.dto.LocationRequestDTO;
-import com.example.calculator.dto.LocationResponseDTO;
+import com.example.calculator.dto.*;
 
 import java.util.List;
 
@@ -16,5 +13,5 @@ public interface LocationService {
 
     String addLocation (InsertRequestDTO requestDTO);
 
-
+    String deleteLocation(DeleteRequestDTO requestDTO);
 }

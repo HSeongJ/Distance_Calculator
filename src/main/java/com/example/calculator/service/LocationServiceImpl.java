@@ -1,9 +1,6 @@
 package com.example.calculator.service;
 
-import com.example.calculator.dto.FindResponseDTO;
-import com.example.calculator.dto.InsertRequestDTO;
-import com.example.calculator.dto.LocationRequestDTO;
-import com.example.calculator.dto.LocationResponseDTO;
+import com.example.calculator.dto.*;
 import com.example.calculator.entity.Location;
 import com.example.calculator.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,4 +78,18 @@ public class LocationServiceImpl implements LocationService {
             return "ID가 중복 되었습니다.";
         }
     }
+
+    @Override
+    public String deleteLocation(DeleteRequestDTO requestDTO) {
+
+        try {
+            locationRepository.deleteByName(requestDTO.getName());
+
+            return "데이터가 정상적으로 삭제되었습니다.";
+        } catch(Exception e) {
+            return "ID가 존재하지 않습니다.";
+        }
+
+    }
+
 }
