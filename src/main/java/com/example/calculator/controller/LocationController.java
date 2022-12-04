@@ -1,9 +1,6 @@
 package com.example.calculator.controller;
 
-import com.example.calculator.dto.FindResponseDTO;
-import com.example.calculator.dto.InsertRequestDTO;
-import com.example.calculator.dto.LocationRequestDTO;
-import com.example.calculator.dto.LocationResponseDTO;
+import com.example.calculator.dto.*;
 import com.example.calculator.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,5 +33,10 @@ public class LocationController {
     @GetMapping("/insert")
     public String addLocation(InsertRequestDTO requestDTO) {
         return locationService.addLocation(requestDTO);
+    }
+
+    @GetMapping("/delete")
+    public void deleteLocation(DeleteRequestDTO requestDTO) {
+        locationService.deleteLocation(requestDTO);
     }
 }
