@@ -1,9 +1,6 @@
 package com.example.calculator.repository;
 
-import com.example.calculator.dto.DeleteRequestDTO;
-import com.example.calculator.dto.FindResponseDTO;
-import com.example.calculator.dto.InsertRequestDTO;
-import com.example.calculator.dto.LocationRequestDTO;
+import com.example.calculator.dto.*;
 import com.example.calculator.entity.Location;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -33,6 +30,18 @@ public class LocationRepositoryTest {
     public void deleteByNameTest(){
 
         locationRepository.deleteByName("dd");
+    }
+
+    @Test
+    public void updateLocationTest() {
+        UpdateLocationRequestDTO requestDTO = new UpdateLocationRequestDTO();
+        requestDTO.setName("cafe");
+        requestDTO.setX(20);
+        requestDTO.setY(20);
+
+        locationRepository.updateLocation(requestDTO);
+
+        System.out.println(locationRepository.findAll());
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.calculator.repository;
 
 import com.example.calculator.dto.InsertRequestDTO;
 import com.example.calculator.dto.LocationRequestDTO;
+import com.example.calculator.dto.UpdateLocationRequestDTO;
 import com.example.calculator.entity.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -30,4 +31,8 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
     void deleteByName(String name);
 
 //    List<Location> findAll();
+    @Transactional
+    @Modifying
+    @Query("UPDATE Location l SET l.x = :#{#requestDTO.x}, l.y = :#{#requestDTO.y} WHERE l.name = :#{#requestDTO.name}")
+    void updateLocation(@Param("requestDTO")UpdateLocationRequestDTO requestDTO);
 }
